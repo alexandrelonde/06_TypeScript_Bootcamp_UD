@@ -11,6 +11,6 @@ No arquivo typescript temos que colocar:
     const -> para uma constante
     let -> quando vamos mudar o valor de uma variável
 
-    obs.: var é reservado para o javascript
+    obs.: var é reservado para o javascriptss
 
  */
