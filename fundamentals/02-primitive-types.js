@@ -47,3 +47,11 @@ else {
     console.log("\n"); // pular linha
 }
 // ---------------------------------------------------------------------------
+// TYPE ANOTATION
+// ==============
+printCourse(title, subtitle, lessonsCount); // chamando a função
+// Definindo a função
+function printCourse(title, subtitle, lessonsCount) {
+    var fullTitle = title + subtitle;
+}
+// ---------------------------------------------------------------------------

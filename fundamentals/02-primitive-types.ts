@@ -18,13 +18,13 @@ console.log("\n"); // pular linha
 // PRIMITIVE TYPES: STRING
 // =======================
 
-const title = "Typescript Bootcamp";
-const subtitle = "Learn the language fundamentals, build practical projects";
+let title = "Typescript Bootcamp";
+let subtitle = "Learn the language fundamentals, build practical projects";
 
 
 //const fullTitle  = title + ": " + subtitle;            "somando" strings 
 //ou
-const fullTitle = `Full title: ${title}: ${subtitle}`; // utilizando template strings
+let fullTitle = `Full title: ${title}: ${subtitle}`; // utilizando template strings
 
 // console.log("Full title: " + fullTitle); // somandos strings
 // ou
@@ -60,6 +60,18 @@ else {
     console.log("PRIMITIVE TYPES: BOOLEAN");
     console.log("The course is NOT published.");
     console.log("\n"); // pular linha
+}
+
+// ---------------------------------------------------------------------------
+
+// TYPE ANOTATION
+// ==============
+
+printCourse (title, subtitle, lessonsCount); // chamando a função
+
+// Definindo a função
+function printCourse(title: string, subtitle: string, lessonsCount: number) {
+    let fullTitle = title + subtitle;
 }
 
 // ---------------------------------------------------------------------------
