@@ -47,11 +47,42 @@ else {
     console.log("\n"); // pular linha
 }
 // ---------------------------------------------------------------------------
-// TYPE ANOTATION
-// ==============
+// !!!!! TYPE ANOTATION
+// ====================
 printCourse(title, subtitle, lessonsCount); // chamando a função
 // Definindo a função
 function printCourse(title, subtitle, lessonsCount) {
     var fullTitle = title + subtitle;
+    var functionLessonsCount = lessonsCount;
+    console.log("TYPE ANOTATION - FUNCTION");
+    console.log("".concat(fullTitle));
+    console.log("The number of lessons is: ".concat(functionLessonsCount));
+    // Vamos fazer um teste para verificar o tipo da variável
+    // Para isso vamos utilizar a função "typeof"
+    console.log("The type of the variable fullTitle is: " + typeof fullTitle);
+    console.log("\n"); // pular linha
 }
+// ---------------------------------------------------------------------------
+// PRIMITIVE TYPES: OBJECT
+// =======================
+var courseObject = {
+    titleObject: "Typescript Bootcamp",
+    subtitleObject: "Learn the language fundamentals, build practical projects",
+    lessonsCountObject: 10,
+    author: {
+        firstName: "Vasco",
+        lastName: "Cavalheiro"
+    }
+};
+/*
+    Após atribuir valores às propriedades da variável object, o typescrip
+    infere o tipo das propriedades do objeto. E para ver o tipo da variável
+    objeto, vamos fazer um teste de imprimir o tipo da variável object.
+ */
+console.log("PRIMITIVE TYPES: OBJECT");
+console.log("The type of the variable course is: " + typeof courseObject);
+console.log("The first name of the author: ".concat(courseObject.author.firstName));
+console.log("The first name of the author: ".concat(courseObject.author.lastName));
+// !!!!! NESTED OBJECT TYPES
+// =========================
 // ---------------------------------------------------------------------------
