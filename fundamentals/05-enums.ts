@@ -1,3 +1,5 @@
+console.log("\n");
+
 enum CourseType {
     FREE = "FREE",
     PREMIUM = "PREMIUM",

@@ -1,3 +1,4 @@
+console.log("\n");
 var CourseType;
 (function (CourseType) {
     CourseType["FREE"] = "FREE";
