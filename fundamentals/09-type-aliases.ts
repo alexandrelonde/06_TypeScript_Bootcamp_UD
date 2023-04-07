@@ -31,6 +31,9 @@ type Course = {
     lessonsCount3: number
 };
 
+// Definimos um objeto course do tipo Course,
+// e deixamos nosso código tipadamente seguro
+
 let course: Course = {
     title: "Typescript Bootcamp",
     subtitle: "Learn the language fundamentals...",
