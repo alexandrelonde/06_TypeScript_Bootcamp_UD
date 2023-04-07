@@ -31,9 +31,9 @@ let pageSize: 10 | 15 | 20 = 10;
     o valor da variável que tem tipo literal de union types.
 */
 
-let courseStatus: "draft" | "published" | "unpublished" | "archived" = "draft";
+let courseStatusLiteral: "draft" | "published" | "unpublished" | "archived" = "draft";
 
-courseStatus = "archived";
+courseStatusLiteral = "archived";
 
 /*
     Podemos fazer isso com multiplos valores de string também
