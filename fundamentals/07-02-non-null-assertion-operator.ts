@@ -6,5 +6,12 @@ let courseId : number | null;
     está me mostrando isso, caso eu queira utilizar um import.
 */
 
-courseId?.toString();
+courseId!.toString();
+
+/*
+    courseId.toString(); -- maneira trivial
+    courseId?.toString(); - caso courseId seja opcional
+    courseId!.toString(); - caso estejamos afirmando que courseId não é nulo
+*/
+
 
