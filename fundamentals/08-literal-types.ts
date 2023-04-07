@@ -35,4 +35,8 @@ let courseStatus: "draft" | "published" | "unpublished" | "archived" = "draft";
 
 courseStatus = "archived";
 
+/*
+    Podemos fazer isso com multiplos valores de string também
+*/
+
 

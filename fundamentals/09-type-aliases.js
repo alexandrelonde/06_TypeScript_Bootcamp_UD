@@ -1,0 +1,13 @@
+var courseStatus = "draft";
+courseStatus = "archived";
+var courseStatus2 = "draft";
+console.log("\n");
+console.log("ESTATUS DO CURSO 1");
+console.log(courseStatus);
+console.log("TIPO DO CURSO 1");
+console.log(typeof courseStatus);
+console.log("\n");
+console.log("ESTATUS DO CURSO 2");
+console.log(courseStatus2);
+console.log("TIPO DO CURSO 2");
+console.log(typeof courseStatus2);
