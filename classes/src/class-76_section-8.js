@@ -1,12 +1,11 @@
+"use strict";
 /*
-    uma classe abstrata é vista com um template e não pode ser instanciada.
-    Para isso, criamos subclasses concretas que o serão. Dentro dessa perspectiva,
-    utilizamos modificadores de acesso para gerir essa dinâmica.
-    Ou seja, a classe abstrata é um contrato que a subclasse terá de implementar.
-
-    É muito importante falar que ao criarmos uma classe abstrata podemos seguir o
-    comportamento de que certas propriedades e métodos serão chamados na classe
-    abstrata mas serão instanciados apenas pela subclasse.
+    Nessa aula vamos falar de interfaces. Como vimos classes abstratas
+    vamos tentar diferencias uma da outra e verificar em quais contextos
+    cada uma é utilizada.
+    Vale lembrar que as mesmas podem ser implmentadas em conjunto, não
+    excluindo a paossibilidade de usar ambas simultaneamente, cada uma
+    com seu papel.
 */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -23,22 +22,31 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Course75 = /** @class */ (function () {
-    function Course75(_title, price, subtitle, creationDate) {
+Object.defineProperty(exports, "__esModule", { value: true });
+/*
+    Como exportamos a interface de outro arquivo e queremos utiliza-la
+    neste aquiro, colocamos o import referente a interface utilizada.
+*/
+var Course76 = /** @class */ (function () {
+    function Course76(id, _title, price, subtitle, creationDate) {
         if (subtitle === void 0) { subtitle = ""; }
         if (creationDate === void 0) { creationDate = new Date(2021, 2, 3); }
+        this.id = id;
         this._title = _title;
         this.price = price;
         this.subtitle = subtitle;
         this.creationDate = creationDate;
         this.validate();
-        Course75.TOTAL_COURSES++;
+        Course76.TOTAL_COURSES++;
     }
+    Course76.prototype.printId = function () {
+        console.log("The course id is: ".concat(this.id));
+    };
     // Método static -> comum a todas a instâncias da classe
-    Course75.printTitle = function (course) {
+    Course76.printTitle = function (course) {
         console.log("The title of the course is: ".concat(course.title));
     };
-    Object.defineProperty(Course75.prototype, "title", {
+    Object.defineProperty(Course76.prototype, "title", {
         // Métodos get e set que precisam ser acessados fora da classe
         get: function () {
             return this._title;
@@ -52,7 +60,7 @@ var Course75 = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(Course75.prototype, "age", {
+    Object.defineProperty(Course76.prototype, "age", {
         get: function () {
             var ageInMs = new Date().getTime() - this.creationDate.getTime();
             // Corrigindo a conversão de milessegundos para dias
@@ -70,28 +78,21 @@ var Course75 = /** @class */ (function () {
         configurable: true
     });
     // Propriedades estáticas
-    Course75.TOTAL_COURSES = 0;
-    Course75.TYPESCRIPT_TITLE = "Typescript Bootcamp";
-    return Course75;
+    Course76.TOTAL_COURSES = 0;
+    Course76.TYPESCRIPT_TITLE = "Typescript Bootcamp";
+    return Course76;
 }());
-var FreeCourse75 = /** @class */ (function (_super) {
-    __extends(FreeCourse75, _super);
-    function FreeCourse75(title, subtitle, creationDate) {
+var FreeCourse76 = /** @class */ (function (_super) {
+    __extends(FreeCourse76, _super);
+    function FreeCourse76(id, title, subtitle, creationDate) {
         if (subtitle === void 0) { subtitle = ""; }
         if (creationDate === void 0) { creationDate = new Date(2021, 4, 5); }
-        return _super.call(this, title, 0, subtitle, creationDate) || this;
+        return _super.call(this, id, title, 0, subtitle, creationDate) || this;
     }
-    FreeCourse75.prototype.validate = function () {
+    FreeCourse76.prototype.validate = function () {
         console.log("Called FreeCourse75 validate()");
     };
-    return FreeCourse75;
-}(Course75));
-// const typescript75 = new Course75(Course75.TYPESCRIPT_TITLE, 100);
-// console.log(typescript75.title);
-/*
-    De acordo com o código acima, não conseguimos mais instancias as classes
-    pai, mas conseguimos instancias as subclasses ou classes filhas de acordo
-    com o código abaixo.
-*/
-var angular75 = new FreeCourse75("Angular Core");
-console.log(angular75);
+    return FreeCourse76;
+}(Course76));
+// const angular76 = new FreeCourse76("Angular Core");
+// console.log(angular76);
