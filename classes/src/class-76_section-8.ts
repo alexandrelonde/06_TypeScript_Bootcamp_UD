@@ -1,15 +1,19 @@
 /*
-    uma classe abstrata é vista com um template e não pode ser instanciada.
-    Para isso, criamos subclasses concretas que o serão. Dentro dessa perspectiva,
-    utilizamos modificadores de acesso para gerir essa dinâmica.
-    Ou seja, a classe abstrata é um contrato que a subclasse terá de implementar.
-
-    É muito importante falar que ao criarmos uma classe abstrata podemos seguir o 
-    comportamento de que certas propriedades e métodos serão chamados na classe 
-    abstrata mas serão instanciados apenas pela subclasse.
+    Nessa aula vamos falar de interfaces. Como vimos classes abstratas
+    vamos tentar diferencias uma da outra e verificar em quais contextos
+    cada uma é utilizada.
+    Vale lembrar que as mesmas podem ser implmentadas em conjunto, não
+    excluindo a paossibilidade de usar ambas simultaneamente, cada uma 
+    com seu papel.
 */
 
-abstract class Course75 {
+import { HasId, HasTitle } from "./class-76_interfaces";
+/*
+    Como exportamos a interface de outro arquivo e queremos utiliza-la 
+    neste aquiro, colocamos o import referente a interface utilizada.
+*/
+
+abstract class Course76 implements HasTitle {
 
     // Propriedades estáticas
     private static TOTAL_COURSES = 0;
@@ -17,6 +21,7 @@ abstract class Course75 {
     static readonly TYPESCRIPT_TITLE = "Typescript Bootcamp";
 
     protected constructor(
+        public id: string,
         protected _title: string,
         protected price: number,
         protected subtitle = "",
@@ -24,14 +29,18 @@ abstract class Course75 {
     ) {
         this.validate();
 
-        Course75.TOTAL_COURSES++;
+        Course76.TOTAL_COURSES++;
+    }
+
+    printId() {
+        console.log(`The course id is: ${this.id}`);
     }
 
     // Método protected -> visto pela classe e suas subclasses
     protected abstract validate();
 
     // Método static -> comum a todas a instâncias da classe
-    static printTitle(course: Course75) {
+    static printTitle(course: Course76) {
         console.log(`The title of the course is: ${course.title}`)
     }
 
@@ -68,14 +77,15 @@ abstract class Course75 {
 }
 
 
-class FreeCourse75 extends Course75 {
+class FreeCourse76 extends Course76 {
 
     constructor (
+        id: string,
         title: string,
         subtitle = "",
         creationDate = new Date(2021, 4, 5)
     ) {
-        super(title, 0, subtitle, creationDate);
+        super(id, title, 0, subtitle, creationDate);
     }
 
     protected validate() {
@@ -83,17 +93,7 @@ class FreeCourse75 extends Course75 {
     }
 }
 
-// const typescript75 = new Course75(Course75.TYPESCRIPT_TITLE, 100);
 
-// console.log(typescript75.title);
+// const angular76 = new FreeCourse76("Angular Core");
 
-/*
-    De acordo com o código acima, não conseguimos mais instancias as classes
-    pai, mas conseguimos instancias as subclasses ou classes filhas de acordo
-    com o código abaixo.
-*/
-
-
-const angular75 = new FreeCourse75("Angular Core");
-
-console.log(angular75);
+// console.log(angular76);
