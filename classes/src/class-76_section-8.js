@@ -23,6 +23,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+var class_77_section_8_1 = require("./class-77_section-8");
 /*
     Como exportamos a interface de outro arquivo e queremos utiliza-la
     neste aquiro, colocamos o import referente a interface utilizada.
@@ -37,6 +38,7 @@ var Course76 = /** @class */ (function () {
         this.subtitle = subtitle;
         this.creationDate = creationDate;
         this.validate();
+        var service = class_77_section_8_1.CourseService.instance();
         Course76.TOTAL_COURSES++;
     }
     Course76.prototype.printId = function () {
@@ -94,5 +96,6 @@ var FreeCourse76 = /** @class */ (function (_super) {
     };
     return FreeCourse76;
 }(Course76));
-// const angular76 = new FreeCourse76("Angular Core");
-// console.log(angular76);
+var angular76 = new FreeCourse76("1", "Angular Core");
+class_77_section_8_1.CourseService.instance();
+console.log(angular76);

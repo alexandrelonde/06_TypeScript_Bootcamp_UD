@@ -8,6 +8,7 @@
 */
 
 import { HasId, HasTitle } from "./class-76_interfaces";
+import { CourseService } from "./class-77_section-8";
 /*
     Como exportamos a interface de outro arquivo e queremos utiliza-la 
     neste aquiro, colocamos o import referente a interface utilizada.
@@ -28,6 +29,8 @@ abstract class Course76 implements HasTitle {
         protected creationDate = new Date(2021, 2, 3)
     ) {
         this.validate();
+
+        const  service = CourseService.instance();
 
         Course76.TOTAL_COURSES++;
     }
@@ -94,6 +97,12 @@ class FreeCourse76 extends Course76 {
 }
 
 
-// const angular76 = new FreeCourse76("Angular Core");
+const angular76 = new FreeCourse76("1", "Angular Core");
 
-// console.log(angular76);
+CourseService.instance();
+
+console.log(angular76);
+
+
+
+
